@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Tinkerers Medellín</title>
+<title>AI Tinkerers Bogotá</title>
 
 <!-- CodeMirror 5 — works from file:// without workers -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
@@ -177,7 +177,7 @@ html, body {
 
 <!-- ── Toolbar ─────────────────────────────────────────────────────────── -->
 <div id="toolbar">
-  <span class="wordmark">AI Tinkerers Medellín</span>
+  <span class="wordmark">AI Tinkerers Bogotá</span>
   <span class="wordmark-file" id="fname">untitled.ttl</span>
 
   <div class="sep"></div>
@@ -771,58 +771,6 @@ document.addEventListener('mouseup', () => {
 const STARTER = `# Write Turtle here — the graph on the right updates as you type.
 # Open an existing .ttl with the toolbar button, or start from scratch.
 
-@prefix :    <https://example.org/myontology/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-
-<https://example.org/myontology/>
-    a owl:Ontology ;
-    rdfs:label "My Ontology"@en .
-
-# ── Classes ──────────────────────────────────────────────
-
-:Person
-    a owl:Class ;
-    rdfs:label "Person"@en ;
-    rdfs:comment "A human being."@en .
-
-:Employee
-    a owl:Class ;
-    rdfs:subClassOf :Person ;
-    rdfs:label "Employee"@en .
-
-:Organization
-    a owl:Class ;
-    rdfs:label "Organization"@en .
-
-# ── Object properties ────────────────────────────────────
-
-:worksFor
-    a owl:ObjectProperty ;
-    rdfs:domain :Employee ;
-    rdfs:range  :Organization ;
-    rdfs:label  "works for"@en .
-
-:manages
-    a owl:ObjectProperty ;
-    rdfs:domain :Employee ;
-    rdfs:range  :Employee ;
-    rdfs:label  "manages"@en .
-
-# ── Datatype properties ──────────────────────────────────
-
-:name
-    a owl:DatatypeProperty ;
-    rdfs:domain :Person ;
-    rdfs:range  xsd:string ;
-    rdfs:label  "name"@en .
-
-:foundedYear
-    a owl:DatatypeProperty ;
-    rdfs:domain :Organization ;
-    rdfs:range  xsd:integer ;
-    rdfs:label  "founded year"@en .
 `;
 
 window._cm = CodeMirror(document.getElementById('cm-wrap'), {
